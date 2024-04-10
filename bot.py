@@ -1,5 +1,6 @@
-import discord
-import os
+import discord, os
+from src.rps import rps
+from src.cf.coinflip import coin_flip
 
 class MyClient(discord.Client):
     async def on_ready(self):
@@ -7,12 +8,38 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
-        # Call the bot_command method when a message is received
         await self.bot_command(message)
 
     async def bot_command(self, message):
         if message.content == 'ping':
             await message.channel.send('pong')
+            
+        elif message.content.startswith('rps'):
+            await self.rps_command(message)
+            
+        elif message.content.startswith('cf'):
+            await self.coinflip_command(message)
+            
+    async def rps_command(self, message):
+        try:
+            _, user_choice = message.content.split(' ')
+            if user_choice not in ['rock', 'paper', 'scissors']:
+                raise ValueError
+            computer_choice = rps.get_computer_choice()
+            result = rps.determine_winner(user_choice, computer_choice)
+            await message.channel.send(result)
+        except ValueError:
+            await message.channel.send("Invalid input. Input 'rps' followed by rock, paper, or scissors")
+
+    async def coinflip_command(self, message):
+        try:
+            _, user_guess = message.content.split(' ')
+            if user_guess not in ['heads', 'tails']:
+                raise ValueError
+            response = coin_flip(user_guess)
+            await message.channel.send(response)
+        except ValueError:
+            await message.channel.send("Invalid input. Input 'cf' followed by heads or tails")
 
 intents = discord.Intents.default()
 intents.message_content = True
