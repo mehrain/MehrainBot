@@ -12,7 +12,7 @@ class MyClient(discord.Client):
 
     async def bot_command(self, message):
         if message.content == 'ping':
-            await message.channel.send('bong')
+            await message.channel.send('```bong```')
             
         elif message.content.startswith('rps'):
             await self.rps_command(message)
