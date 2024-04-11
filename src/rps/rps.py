@@ -10,23 +10,23 @@ def determine_winner(player, computer):
         return "Tie!"
     elif player == "rock":
         if computer == "paper":
-            return f"You lose! {computer} covers {player}"
+            return f"```You lose! {computer} covers {player}```"
         else:
-            return f"You win! {player} smashes {computer}"
+            return f"```You win! {player} smashes {computer}```"
     elif player == "paper":
         if computer == "scissors":
-            return f"You lose! {computer} cut {player}"
+            return f"```You lose! {computer} cut {player}```"
         else:
-            return f"You win! {player} covers {computer}"
+            return f"```You win! {player} covers {computer}```"
     elif player == "scissors":
         if computer == "rock":
-            return f"You lose... {computer} smashes {player}"
+            return f"```You lose... {computer} smashes {player}```"
         else:
-            return f"You win! {player} cut {computer}"
+            return f"```You win! {player} cut {computer}```"
 
-def play_game():
-    player = input("Rock, Paper, Scissors? ").lower()
-    computer = get_computer_choice()
-    result = determine_winner(player, computer)
-    print(result)
+# def play_game():
+#    player = input("Rock, Paper, Scissors? ").lower()
+#     computer = get_computer_choice()
+#     result = determine_winner(player, computer)
+#     print(result)
 

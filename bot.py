@@ -29,7 +29,7 @@ class MyClient(discord.Client):
             result = rps.determine_winner(user_choice, computer_choice)
             await message.channel.send(result)
         except ValueError:
-            await message.channel.send("Invalid input. Input 'rps' followed by rock, paper, or scissors")
+            await message.channel.send("```Invalid input. Input 'rps' followed by rock, paper, or scissors```")
 
     async def coinflip_command(self, message):
         try:
@@ -39,7 +39,7 @@ class MyClient(discord.Client):
             response = coin_flip(user_guess)
             await message.channel.send(response)
         except ValueError:
-            await message.channel.send("Invalid input. Input 'cf' followed by heads or tails")
+            await message.channel.send("```Invalid input. Input 'cf' followed by heads or tails```")
 
 intents = discord.Intents.default()
 intents.message_content = True
