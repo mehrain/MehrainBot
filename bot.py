@@ -3,6 +3,7 @@ import logging
 import logging.handlers
 from src.rps import rps
 from src.cf.coinflip import coin_flip
+import os
 
 # Set up logging
 logger = logging.getLogger('discord')
@@ -65,5 +66,5 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-client.run('MTIyNjYzNTQ1MDM3NTA4MjAzNQ.GnrE2y.xpyjRCd0O5lUe4rmQAKG45oc_2XHfooeJISwUU')
+client.run(os.getenv('DISCORD_TOKEN'))
 
