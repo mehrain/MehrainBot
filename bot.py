@@ -1,11 +1,10 @@
-import discord
-import logging
-import logging.handlers
 from src.rps import rps
 from src.cf.coinflip import coin_flip
 import os
 from dotenv import load_dotenv
+import discord, logging, logging.handlers
 
+load_dotenv()
 
 # Set up logging
 logger = logging.getLogger('discord')
