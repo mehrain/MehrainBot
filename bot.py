@@ -6,6 +6,8 @@ import discord, logging, logging.handlers
 
 load_dotenv()
 
+#test case 
+
 # Set up logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
