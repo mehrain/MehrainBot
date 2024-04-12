@@ -1,12 +1,32 @@
-import discord, os
+import discord
+import logging
+import logging.handlers
 from src.rps import rps
 from src.cf.coinflip import coin_flip
 
+# Set up logging
+logger = logging.getLogger('discord')
+logger.setLevel(logging.DEBUG)
+logging.getLogger('discord.http').setLevel(logging.INFO)
+
+handler = logging.handlers.RotatingFileHandler(
+    filename='src/logs/botlog.txt',
+    encoding='utf-8',
+    maxBytes=32 * 1024 * 1024,  
+    backupCount=5,  
+)
+dt_fmt = '%Y-%m-%d %H:%M:%S'
+formatter = logging.Formatter('[{asctime}] [{levelname:<8}] {name}: {message}', dt_fmt, style='{')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
 class MyClient(discord.Client):
     async def on_ready(self):
+        logger.info('Logged on as {0}!'.format(self.user))
         print(f'Logged on as {self.user}!')
 
     async def on_message(self, message):
+        logger.info('Message from {0.author}: {0.content}'.format(message))
         print(f'Message from {message.author}: {message.content}')
         await self.bot_command(message)
 
