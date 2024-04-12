@@ -7,7 +7,7 @@ def get_computer_choice():
 
 def determine_winner(player, computer):
     if player == computer:
-        return "Tie!"
+        return "```Tie!```"
     elif player == "rock":
         if computer == "paper":
             return f"```You lose! {computer} covers {player}```"
