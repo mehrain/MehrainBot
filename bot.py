@@ -4,9 +4,6 @@ import os
 from dotenv import load_dotenv
 import discord, logging, logging.handlers
 
-#testing
-#testing2
-
 load_dotenv()
 # Set up logging
 logger = logging.getLogger('discord')
