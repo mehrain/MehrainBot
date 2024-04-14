@@ -3,8 +3,11 @@ from src.cf.coinflip import coin_flip
 import os
 from dotenv import load_dotenv
 import discord, logging, logging.handlers
+from src.mastodon.mastodonbot import MastodonBot
+
 
 load_dotenv()
+mastadon_bot = MastodonBot()
 # Set up logging
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -30,6 +33,7 @@ class MyClient(discord.Client):
         logger.info('Message from {0.author}: {0.content}'.format(message))
         print(f'Message from {message.author}: {message.content}')
         await self.bot_command(message)
+        
 
     async def bot_command(self, message):
         if message.content == 'ping':
@@ -40,6 +44,13 @@ class MyClient(discord.Client):
             
         elif message.content.startswith('cf'):
             await self.coinflip_command(message)
+            
+        elif message.content.startswith('xpost'):
+            _, status = message.content.split(' ', 1)
+            mastadon_bot.post_status(status)
+            await message.channel.send("```Status posted to Mastodon!```")
+            
+            
             
     async def rps_command(self, message):
         try:
