@@ -4,15 +4,13 @@ from dotenv import load_dotenv
 from src.logs.logger_setup import setup_logger
 
 import discord
-from discord import option
 
 
 logger = setup_logger()
 load_dotenv()
 bot = discord.Bot()
 
-GUILD_IDS = [1226637122526515320]
-
+GUILD_IDS = [int(os.getenv('MCP_GUILD_ID'))]
 DISC_TOKEN = os.getenv('DISCORD_TOKEN')
 
 @bot.event

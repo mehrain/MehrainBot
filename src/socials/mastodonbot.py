@@ -1,8 +1,5 @@
 from mastodon import Mastodon
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 class MastodonBot:
     def __init__(self):
