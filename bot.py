@@ -10,7 +10,7 @@ logger = setup_logger()
 load_dotenv()
 bot = discord.Bot()
 
-GUILD_IDS = [int(os.getenv('MCP_GUILD_ID'))]
+GUILD_IDS = [int(id) for id in os.getenv('GUILD_IDS').split(',')]
 DISC_TOKEN = os.getenv('DISCORD_TOKEN')
 
 @bot.event

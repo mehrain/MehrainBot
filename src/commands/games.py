@@ -8,7 +8,7 @@ from discord import guild_only
 from src.games import rps
 from src.games import coinflip
 
-GUILD_IDS = [int(os.getenv('MCP_GUILD_ID'))]
+GUILD_IDS = [int(id) for id in os.getenv('GUILD_IDS').split(',')]
 
 
 class Games(commands.Cog):

@@ -7,7 +7,7 @@ from discord import guild_only
 
 from src.socials.mastodonbot import MastodonBot
 
-GUILD_IDS = [int(os.getenv('MCP_GUILD_ID'))]
+GUILD_IDS = [int(id) for id in os.getenv('GUILD_IDS').split(',')]
 MEHRAIN_ID = int(os.getenv('MEHRAIN_ID'))
 
 class Socials(commands.Cog):
