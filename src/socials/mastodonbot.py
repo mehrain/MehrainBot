@@ -16,6 +16,7 @@ class MastodonBot:
 
     def get_mentions(self):
         return self.mastodon.notifications()
+
     
 
 
