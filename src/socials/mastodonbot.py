@@ -10,6 +10,8 @@ class MyStreamListener(StreamListener):
         if notification.type == 'mention':
             status = notification.status
             self.mastodon.handle_mention(status)
+        elif notification.type == 'follow':
+            self.mastodon.handle_follow(notification)
 
 class MastodonBot:
     def __init__(self):
@@ -29,6 +31,12 @@ class MastodonBot:
         self.mastodon.status_post(reply, in_reply_to_id=status.id)
         username = status.account.acct
         print(f"Replied to {username}")
+
+    def handle_follow(self, notification):
+        follower_id = notification.account.id
+        self.mastodon.account_follow(follower_id)
+        #self.post_status(notification.account.acct, 'Thanks for following my bot!')
+        print(f"Followed {follower_id}")
 
     def post_status(self, status):
         self.mastodon.status_post(status)
