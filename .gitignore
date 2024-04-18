@@ -160,3 +160,15 @@ cython_debug/
 #.idea/
 
 src/logs/botlog.txt
+MehrainBotvenv/lib64
+MehrainBotvenv/pyvenv.cfg
+MehrainBotvenv/bin/activate
+MehrainBotvenv/bin/activate.csh
+MehrainBotvenv/bin/activate.fish
+MehrainBotvenv/bin/Activate.ps1
+MehrainBotvenv/bin/pip
+MehrainBotvenv/bin/pip3
+MehrainBotvenv/bin/pip3.12
+MehrainBotvenv/bin/python
+MehrainBotvenv/bin/python3
+MehrainBotvenv/bin/python3.12
