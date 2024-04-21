@@ -51,7 +51,7 @@ class Games(commands.Cog):
         else:
             embed = discord.Embed(
                 title=pokemon.name,
-                description="Placeholder more stats will be added soon!",
+                description="Placeholder more stats will be added soon!(everything is shiny variant for now)",
                 color=discord.Colour.blurple(), # Pycord provides a class with default colors you can choose from
             )
 
