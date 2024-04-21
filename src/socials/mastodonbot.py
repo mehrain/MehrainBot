@@ -39,6 +39,7 @@ class MastodonBot:
         username = notification.account.acct
         self.mastodon.account_follow(follower_id)
         print(f"Followed {username}")
+        # TODO: Migrate this to an event call in Discord bot logic instead of here.
         for channel in self.discord_channels:
             if channel:
                 self.discord_bot.loop.create_task(channel.send(f"```{username} followed MehrainBot, bot has followed them back```"))
