@@ -13,7 +13,7 @@ ADMIN_ID = int(os.getenv('ADMIN_ID'))
 class Socials(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.mastodonBot = MastodonBot() 
+        self.mastodonBot = bot.mastodon_bot
 
     @discord.slash_command(name="mastodon", guild_ids=GUILD_IDS)
     @guild_only()
