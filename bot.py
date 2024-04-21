@@ -2,7 +2,12 @@ import os
 from dotenv import load_dotenv
 from src.logs.logger_setup import setup_logger
 import discord
+import pokebase as pb
 from src.socials.mastodonbot import MastodonBot
+
+# Set the cache directory to a persistent directory inside the Docker container for caching Pokemon data
+pb.cache.CACHE_DIR = '/home/container/.cache'
+
 
 logger = setup_logger()
 load_dotenv()
