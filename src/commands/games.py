@@ -44,6 +44,9 @@ class Games(commands.Cog):
     @option("pokemon_name", description="Enter your Pokemon name", required=True)
     async def poke_search(self, ctx: discord.ApplicationContext, pokemon_name:str):
         """Search for a Pokemon!"""
+        # Defer the response to tell Discord that the bot is still processing the command
+        await ctx.defer()
+
         pokemon = self.pokeApi.get_pokemon(pokemon_name, is_shiny=True, is_female=False)  # replace with your function to search for a Pokemon
 
         if pokemon is None:
