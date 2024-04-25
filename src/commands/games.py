@@ -57,8 +57,12 @@ class Games(commands.Cog):
                 description="Placeholder more stats will be added soon!",
                 color=discord.Colour.blurple(), # Pycord provides a class with default colors you can choose from
             )
+            
+            for stat in pokemon.stats:
+                embed.add_field(name=stat.name, value=f"Base stat: {stat.base_stat}\nEffort: {stat.effort}", inline=False)
 
-            embed.set_image(url=pokemon.sprite)
+            embed.set_thumbnail(url=pokemon.sprite)
+            #embed.set_image(url="https://static-00.iconduck.com/assets.00/pokeball-icon-512x512-gg20zbmv.png")
 
             await ctx.respond(" ", embed=embed)
             
