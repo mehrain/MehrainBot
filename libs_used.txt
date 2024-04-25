@@ -3,3 +3,6 @@ python-dotenv
 Mastodon.py
 colorlog
 pokebase
+
+#Created /home/container for the .cache file because the docker hosting requires it. 
+
