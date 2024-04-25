@@ -42,20 +42,28 @@ class Games(commands.Cog):
     @discord.slash_command(name="pokemon", guild_ids=GUILD_IDS)
     @guild_only()
     @option("pokemon_name", description="Enter your Pokemon name", required=True)
-    async def poke_search(self, ctx: discord.ApplicationContext, pokemon_name:str):
+    @option("shiny", description="Do you want a shiny Pokemon?", required=False, default=False)
+    @option("gender", description="Is the pokemon female? (defaults to False)", required=False, default=False)
+    async def poke_search(self, ctx: discord.ApplicationContext, pokemon_name:str, shiny:bool=False, gender:bool=False):
         """Search for a Pokemon!"""
-        pokemon = self.pokeApi.get_pokemon(pokemon_name, is_shiny=True, is_female=False)  # replace with your function to search for a Pokemon
+        # TODO Add a loading message and fix infinite loop on API ID error.
+        await ctx.defer()
+
+        pokemon = self.pokeApi.get_pokemon(pokemon_name, is_shiny=shiny, is_female=gender)
 
         if pokemon is None:
             await ctx.respond(f"No Pokemon found with the name {pokemon_name}")
         else:
             embed = discord.Embed(
                 title=pokemon.name,
-                description="Placeholder more stats will be added soon!(everything is shiny variant for now)",
-                color=discord.Colour.blurple(), # Pycord provides a class with default colors you can choose from
+                description="Placeholder more stats will be added soon!",
+                color=discord.Colour.blurple(),
             )
+            
+            for stat in pokemon.stats:
+                embed.add_field(name=stat.name, value=stat.base_stat, inline=False)
 
-            embed.set_image(url=pokemon.sprite)
+            embed.set_thumbnail(url=pokemon.sprite)
 
             await ctx.respond(" ", embed=embed)
             
