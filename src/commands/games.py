@@ -42,6 +42,7 @@ class Games(commands.Cog):
     @discord.slash_command(name="pokemon", guild_ids=GUILD_IDS)
     @guild_only()
     #TODO handle female + shiny expection HTTPError: 404 Client Error: Not Found for url: https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/6.png
+    #todo handle female not existing
     @option("pokemon_name", description="Enter your Pokemon name", required=True)
     @option("shiny", description="Do you want a shiny Pokemon?", required=False, default=False)
     @option("gender", description="Is the pokemon female? (defaults to False)", required=False, default=False)
