@@ -13,6 +13,7 @@ logger = setup_logger()
 load_dotenv()
 bot = discord.Bot()
 
+# ** Guild_ids are used instead of global since these have instant updates, global commands take up to an hour to update
 GUILD_IDS = [int(id) for id in os.getenv('GUILD_IDS').split(',')]
 DISC_TOKEN = os.getenv('DISCORD_TOKEN')
 
