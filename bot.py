@@ -30,6 +30,7 @@ async def on_ready():
 cogs_list = [
     'games',
     'socials',
+    'images',
 ]
 
 for cog in cogs_list:
