@@ -1,7 +1,7 @@
 import discord
 import os
 from discord.ext import commands
-from src.img.image_manipulator import rotate_image, grayscale_image
+from src.img.image_manipulator import rotate_image, grayscale_image, enhance_image
 
 GUILD_IDS = [int(id) for id in os.getenv('GUILD_IDS').split(',')]
 
@@ -51,6 +51,23 @@ class Images(commands.Cog):
         grayscaled_image = grayscale_image("image.png")
         grayscaled_file = discord.File(grayscaled_image, filename="grayscaled_image.png")
         await ctx.send(content="Here's your grayscaled image:", file=grayscaled_file)
+        os.remove("image.png")
+        
+    @discord.slash_command(name="enhanceimage", guild_ids=GUILD_IDS)
+    @commands.guild_only()
+    async def enhance(self, ctx: discord.ApplicationContext, vibrance: float = 1.0, contrast: float = 1.0, brightness: float = 1.0, sharpness: float = 1.0):
+        """Enhance an image with specified parameters. Upload an image to the channel first.""" 
+        await ctx.respond("Processing your request...")
+        
+        message = next((m for m in await ctx.channel.history(limit=10).flatten() if m.attachments and m.author == ctx.author), None)
+        if not message:
+            await ctx.send("No image found.")
+            return
+        attachment = message.attachments[0]
+        await attachment.save("image.png")
+        enhanced_image = enhance_image("image.png", vibrance, contrast, brightness, sharpness)
+        enhanced_file = discord.File(enhanced_image, filename="enhanced_image.png")
+        await ctx.send(content="Here's your enhanced image:", file=enhanced_file)
         os.remove("image.png")
 
 def setup(bot):
