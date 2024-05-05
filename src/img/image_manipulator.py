@@ -1,14 +1,19 @@
 from PIL import Image
 
 def rotate_image(image_path, degrees):
-    # Open the image file
     with Image.open(image_path) as img:
-        # Rotate the image
         rotated_img = img.rotate(degrees)
 
-        # Save the rotated image to a new file
         rotated_image_path = "rotated_image.png"
         rotated_img.save(rotated_image_path)
 
-    # Return the path to the rotated image file
     return rotated_image_path
+
+def grayscale_image(image_path):
+    with Image.open(image_path) as img:
+        grayscale_img = img.convert("L")
+
+        grayscale_image_path = "grayscaled_image.png"
+        grayscale_img.save(grayscale_image_path)
+
+    return grayscale_image_path
