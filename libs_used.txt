@@ -4,6 +4,7 @@ Mastodon.py
 colorlog
 pokebase
 Pillow
+requests
 
 #Created /home/container for the .cache file because the docker hosting requires it. 
 

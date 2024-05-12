@@ -1,0 +1,218 @@
+
+{
+    "result": [
+        {
+            "id": "2a0f1730844656b440ce98dbb1049cfc846685c0ee935b70f8dab1423631ce62",
+            "listing": {
+                "method": "psapi",
+                "indexed": "2024-05-10T23:56:36Z",
+                "stash": {
+                    "name": "~price 100 chaos",
+                    "x": 16,
+                    "y": 1
+                },
+                "whisper": "@Faldhur Hi, I would like to buy your Blackflame Amethyst Ring listed for 100 chaos in Standard (stash tab \"~price 100 chaos\"; position: left 17, top 2)",
+                "account": {
+                    "name": "Enslaved89",
+                    "online": {
+                        "league": "Standard"
+                    },
+                    "lastCharacterName": "Faldhur",
+                    "language": "en_US",
+                    "realm": "pc"
+                },
+                "price": {
+                    "type": "~price",
+                    "amount": 100,
+                    "currency": "chaos"
+                }
+            },
+            "item": {
+                "verified": true,
+                "w": 1,
+                "h": 1,
+                "icon": "https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvUmluZ3MvQmxhY2tGbGFtZUZpcmUiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/d8cb90fe20/BlackFlameFire.png",
+                "league": "Standard",
+                "id": "2a0f1730844656b440ce98dbb1049cfc846685c0ee935b70f8dab1423631ce62",
+                "name": "Blackflame",
+                "typeLine": "Amethyst Ring",
+                "baseType": "Amethyst Ring",
+                "rarity": "Unique",
+                "ilvl": 83,
+                "identified": true,
+                "requirements": [
+                    {
+                        "name": "Level",
+                        "values": [
+                            [
+                                "49",
+                                0
+                            ]
+                        ],
+                        "displayMode": 0,
+                        "type": 62
+                    }
+                ],
+                "implicitMods": [
+                    "+17% to Chaos Resistance"
+                ],
+                "explicitMods": [
+                    "+10% to Fire Damage over Time Multiplier",
+                    "50% reduced Ignite Duration on Enemies",
+                    "13% chance to Ignite",
+                    "Enemies Ignited by you take Chaos Damage instead of Fire Damage from Ignite",
+                    "Withered does not expire on Enemies Ignited by you",
+                    "+21% to Fire and Chaos Resistances"
+                ],
+                "flavourText": [
+                    "Beyond the veil of death, there burns a fire\r",
+                    "by whose light night is borne."
+                ],
+                "frameType": 3,
+                "extended": {
+                    "mods": {
+                        "explicit": [
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 1,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_3382807662",
+                                        "min": 8,
+                                        "max": 12
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 1,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_1086147743",
+                                        "min": -50,
+                                        "max": -50
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 1,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_1335054179",
+                                        "min": 10,
+                                        "max": 15
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 62,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_2714810050",
+                                        "min": 1,
+                                        "max": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 1,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_279110104",
+                                        "min": 1,
+                                        "max": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 1,
+                                "magnitudes": [
+                                    {
+                                        "hash": "explicit.stat_378817135",
+                                        "min": 20,
+                                        "max": 25
+                                    }
+                                ]
+                            }
+                        ],
+                        "implicit": [
+                            {
+                                "name": "",
+                                "tier": "",
+                                "level": 38,
+                                "magnitudes": [
+                                    {
+                                        "hash": "implicit.stat_2923486259",
+                                        "min": 17,
+                                        "max": 23
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "hashes": {
+                        "explicit": [
+                            [
+                                "explicit.stat_3382807662",
+                                [
+                                    0
+                                ]
+                            ],
+                            [
+                                "explicit.stat_1086147743",
+                                [
+                                    1
+                                ]
+                            ],
+                            [
+                                "explicit.stat_1335054179",
+                                [
+                                    2
+                                ]
+                            ],
+                            [
+                                "explicit.stat_2714810050",
+                                [
+                                    3
+                                ]
+                            ],
+                            [
+                                "explicit.stat_279110104",
+                                [
+                                    4
+                                ]
+                            ],
+                            [
+                                "explicit.stat_378817135",
+                                [
+                                    5
+                                ]
+                            ]
+                        ],
+                        "implicit": [
+                            [
+                                "implicit.stat_2923486259",
+                                [
+                                    0
+                                ]
+                            ]
+                        ]
+                    },
+                    "text": "SXRlbSBDbGFzczogUmluZ3MNClJhcml0eTogVW5pcXVlDQpCbGFja2ZsYW1lDQpBbWV0aHlzdCBSaW5nDQotLS0tLS0tLQ0KUmVxdWlyZW1lbnRzOg0KTGV2ZWw6IDQ5DQotLS0tLS0tLQ0KSXRlbSBMZXZlbDogODMNCi0tLS0tLS0tDQorMTclIHRvIENoYW9zIFJlc2lzdGFuY2UgKGltcGxpY2l0KQ0KLS0tLS0tLS0NCisxMCUgdG8gRmlyZSBEYW1hZ2Ugb3ZlciBUaW1lIE11bHRpcGxpZXINCjUwJSByZWR1Y2VkIElnbml0ZSBEdXJhdGlvbiBvbiBFbmVtaWVzDQoxMyUgY2hhbmNlIHRvIElnbml0ZQ0KRW5lbWllcyBJZ25pdGVkIGJ5IHlvdSB0YWtlIENoYW9zIERhbWFnZSBpbnN0ZWFkIG9mIEZpcmUgRGFtYWdlIGZyb20gSWduaXRlDQpXaXRoZXJlZCBkb2VzIG5vdCBleHBpcmUgb24gRW5lbWllcyBJZ25pdGVkIGJ5IHlvdQ0KKzIxJSB0byBGaXJlIGFuZCBDaGFvcyBSZXNpc3RhbmNlcw0KLS0tLS0tLS0NCkJleW9uZCB0aGUgdmVpbCBvZiBkZWF0aCwgdGhlcmUgYnVybnMgYSBmaXJlDQpieSB3aG9zZSBsaWdodCBuaWdodCBpcyBib3JuZS4NCg=="
+                }
+            }
+        }
+    ]
+}
+
+
