@@ -60,3 +60,10 @@ def poe_api(item_name: str, league: str = "Standard", amount_listing: int = 1):
 
 
 poe_api("Tabula Rasa")
+
+import base64
+
+encoded_text = "SXRlbSBDbGFzczogQm9keSBBcm1vdXJzDQpSYXJpdHk6IFVuaXF1ZQ0KVGFidWxhIFJhc2ENClNpbXBsZSBSb2JlDQotLS0tLS0tLQ0KU29ja2V0czogVy1XLVctVy1XLVcgDQotLS0tLS0tLQ0KSXRlbSBMZXZlbDogODANCi0tLS0tLS0tDQpOb3RlOiB+cHJpY2UgMiBjaGFvcw0K=="
+decoded_text = base64.b64decode(encoded_text).decode('utf-8')
+
+print(decoded_text)
