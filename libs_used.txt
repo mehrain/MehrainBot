@@ -5,6 +5,7 @@ colorlog
 pokebase
 Pillow
 requests
+mysql-connector-python
 
 #Created /home/container for the .cache file because the docker hosting requires it. 
 
