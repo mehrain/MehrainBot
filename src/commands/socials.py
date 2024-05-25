@@ -23,11 +23,12 @@ class Socials(commands.Cog):
         if ctx.author.id != ADMIN_ID:
             author = str(ctx.author.display_name)
             await ctx.respond(f"Stop trolling {author}! You are not allowed to use this command.")
-            self.logger.warning(f"Unauthorized access attempt by {author}")  # Log a warning message
         
-        #todo logging needs fixing after being containerized
         if post_text:    
             self.mastodonBot.post_status(post_text) 
             post_text = str(post_text)
             await ctx.respond(f"The following message has been send to Mastodon: {post_text}")
-            self.logger.info(f"Message sent to Mastodon: {post_text}")  # Log an info message
+        
+
+def setup(bot): # this is called by Pycord to setup the cog
+    bot.add_cog(Socials(bot)) # add the cog to the bot
