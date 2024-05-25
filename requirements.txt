@@ -3,7 +3,8 @@ python-dotenv
 Mastodon.py
 colorlog
 pokebase
-Pillow
+#todo figure out why pillow is not installing
+#Pillow 
 requests
 mysql-connector-python
 
