@@ -163,5 +163,7 @@ src/logs/botlog.txt
 MehrainBotvenv/
 grayscaled_image.png/
 rotated_image.png/
+__pycache__
+
 
 
