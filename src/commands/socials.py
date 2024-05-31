@@ -32,3 +32,5 @@ class Socials(commands.Cog):
 
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(Socials(bot)) # add the cog to the bot
+    
+    

@@ -34,11 +34,3 @@ class PokeResponse:
         self.name = name
         self.sprite = sprite
         self.stats = stats
-    
-# api = PokeApi()
-# pokemon = api.get_pokemon('pikachu', False, False)
-
-# print(pokemon)
-# print(pokemon.name)
-# print(pokemon.sprite)
-# print(pokemon.stats)
