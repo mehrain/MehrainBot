@@ -29,7 +29,23 @@ class PoETradeAPI:
             }
         }
         
-        return data    
+        return data   
+    
+    def parse_trade_response(self, search_response):
+    
+        for item in search_response['result']:	
+
+            listing = item["listing"]
+            
+            item_price = listing["price"]
+            item_whisper = listing["whisper"]
+
+            price =  { 
+                "amount": item_price["amount"],
+                "currency": item_price["currency"]
+                }
+
+            print(price, item_whisper) 
 
     def search_item(self, item_name: str, league: str = "Standard", amount_listing: int = 1):
         # Send POST request to search for items
@@ -47,10 +63,10 @@ class PoETradeAPI:
         response_data = response.json()
 
         # Print the response data
-        print("Response data:")
-        print(response_data)
-        print(response_data.get('id'))
-        print(response_data['result'][:amount_listing])
+        # print("Response data:")
+        # print(response_data)
+        # print(response_data.get('id'))
+        # print(response_data['result'][:amount_listing])
 
         # Get the request ID and the cheapest listings
         request_id = response_data.get('id')
@@ -58,19 +74,21 @@ class PoETradeAPI:
 
         # Use the first listing as the ID for the fetch endpoint
         listing_id = ','.join(cheapest_listings)
-        print(listing_id)
+        # print(listing_id)
 
         # Construct the trade URL
         trade_endpoint = f'{self.base_url}/fetch/{listing_id}?query={request_id}'
-        print(trade_endpoint)
+        # print(trade_endpoint)
 
         # Send GET request to fetch trade data
         get_trades_response = requests.get(trade_endpoint, headers=self.headers)
-        print(get_trades_response)
-        print(get_trades_response.status_code)
-        print(get_trades_response.json())
+        # print(get_trades_response)
+        # print(get_trades_response.status_code)
+        # print(get_trades_response.json())
 
-        ###
+        trades = self.parse_trade_response(get_trades_response.json())
+        
+        return trades
         
 
 PoETradeAPI().search_item(item_name="Headhunter", league="Standard", amount_listing=2)
