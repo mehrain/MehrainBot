@@ -16,7 +16,7 @@ class PoETradeAPI:
         self.data = {}
 
 
-# TODO: 
+# TODO: Expand search filter to include more options
     def search_filter(self, item_name):
         self.data = {
             "query": {
